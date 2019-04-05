@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+ 	<!-- JDBC connection settings -->
+ 	<property name="conncection.driver-class">oracle.jdbc.driver</property>
+ 	<property name="connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+ 	<property name="connection.username">course</property>
+ 	<property name="connection.password">course</property>
+ 	
+ 	<!-- Set the current session context -->
+ 	<property name="current_session_context_class">thread</property>
+ 	
+ 	<!-- Echo the sql to stdout -->
+ 	<property name="show_sql">true</property>
+ </session-factory>
+</hibernate-configuration>
