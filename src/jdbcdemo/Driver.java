@@ -5,6 +5,7 @@ import java.sql.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 public class Driver {
 
@@ -20,14 +21,19 @@ public class Driver {
 		Session session = factory.getCurrentSession();
 		
 		//create employee objects
-		Employee e1= new Employee(30,"Abdelwaheb","FERCHICHI");
-		Employee e2 = new Employee(40,"Yahia","FERCHICHI");
+		//Employee e1= new Employee(30,"Abdelwaheb","FERCHICHI");
+		//Employee e2 = new Employee(40,"Yahia","FERCHICHI");
 		//start transaction
 		session.beginTransaction();
 		//save the employee objects
 		System.out.println("Saving Objects .....");
-		session.save(e1);
-		session.save(e2);
+		//session.save(e1);
+		//session.save(e2);
+		//delete all employees
+		String deleteString = "delete from Employee";
+		Query deleteQuery = session.createQuery(deleteString);
+		deleteQuery.executeUpdate();
+		
 		//commit transaction
 		session.getTransaction().commit();
 		//JDBC test
